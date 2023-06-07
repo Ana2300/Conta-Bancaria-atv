@@ -1,15 +1,39 @@
 package conta;
 
 import java.util.Scanner;
-
+import conta.Model.ContaCorrente;
+import conta.Model.ContaPoupança;
 import conta.util.Cores;
 
 public class Menu {
+	
 	public static void main(String[] args) {
-
-		Scanner leia = new Scanner(System.in);
-
-		int opcao;
+		
+				
+				// Teste da Classe Conta Corrente
+				ContaCorrente cc1 = new ContaCorrente(1, 123, 1, "José da Silva", 1000);
+				
+				//public ContaCorrente(int numero, int agencia, int tipo, String titular, float saldo) {
+					//super(numero, agencia, tipo, titular, saldo);
+				
+		
+				
+				cc1.visualizar();
+				cc1.sacar(12000.0f);
+				cc1.visualizar();
+				cc1.depositar(1200.0f);
+				cc1.visualizar();
+				
+				
+				 // Teste da Classe Conta Poupança
+				ContaPoupança cp1 = new ContaPoupança(2, 123, 2, "Maria dos Santos", 10000);
+				cp1.visualizar();
+		        cp1.sacar(1000.0f);
+				cp1.visualizar();
+				cp1.depositar(5000.0f);
+				cp1.visualizar();
+				
+				
 
 		while (true) {
 
@@ -35,7 +59,9 @@ public class Menu {
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     " + Cores.TEXT_RED);
 
-			opcao = leia.nextInt();
+			
+			Scanner leia = new Scanner(System.in);
+			int opcao = leia.nextInt();
 
 			if (opcao == 9) {
 				System.out.println("\nBanco do Brazil com Z - O seu Futuro começa aqui!");
